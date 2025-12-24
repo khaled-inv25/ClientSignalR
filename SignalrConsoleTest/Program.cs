@@ -11,7 +11,7 @@ class SignalRConsoleTest
 
     // **IMPORTANT: Replace these with your actual client and user credentials**
     private const string ClientId = "Esh3arTech_App";
-   // private const string UserName = "esh3ar_userC"; // User's username
+    // private const string UserName = "esh3ar_userC"; // User's username
     private const string Password = "1q2w3E*"; // User's password
     // ClientSecret and Scope are omitted from the request as per your requirement.
 
@@ -31,12 +31,12 @@ class SignalRConsoleTest
     public class MessageDto
     {
         public Guid Id { get; set; }
-
         public string RecipientPhoneNumber { get; set; }
-
         public string MessageContent { get; set; }
+        public string From { get; set; }
+        public string AccessUrl { get; set; }
+        public DateTime? UrlExpiresAt { get; set; }
 
-        public Guid CreatorId { get; set; }
     }
 
     public class MessageModel
@@ -45,6 +45,8 @@ class SignalRConsoleTest
         public string RecipientPhoneNumber { get; set; }
         public string MessageContent { get; set; }
         public string From { get; set; }
+        public string AccessUrl { get; set; }
+        public DateTime? UrlExpiresAt { get; set; }
     }
 
     // --- Token Retrieval Logic (Simplified) ---
@@ -112,11 +114,14 @@ class SignalRConsoleTest
 
         connection.On<string>("ReceiveMessage", async message =>
         {
+            Console.WriteLine("+---------------+-----------------------------------+");
+            Console.WriteLine("| From          | Message Content                   |");
+            Console.WriteLine("+---------------+-----------------------------------+");
             MessageModel msg;
             try
             {
-                Console.WriteLine($"📩 Received message: {message}");
                 msg = JsonSerializer.Deserialize<MessageModel>(message);
+                Console.WriteLine($"| {msg.From,-13} | {msg.MessageContent,-33} |");
                 await connection.InvokeAsync("AcknowledgeMessage", msg.Id);
             }
             catch (JsonException ex)
@@ -125,16 +130,20 @@ class SignalRConsoleTest
                 return;
             }
         });
-        
+
         connection.On<string>("ReceivePendingMessages", async message =>
         {
+            Console.WriteLine("📩 Pending Messages");
+            Console.WriteLine("+----------------------+----------------------+--------------------------+");
+            Console.WriteLine("| Message Content      | From                 | Access URL               |");
+            Console.WriteLine("+----------------------+----------------------+--------------------------+");
             List<MessageDto> msgs;
             try
             {
                 msgs = JsonSerializer.Deserialize<List<MessageDto>>(message);
                 foreach (var msg in msgs)
                 {
-                    Console.WriteLine($"📩 Pending messages: \n{msg.MessageContent}\n{msg.CreatorId}");
+                    Console.WriteLine($"| {msg.MessageContent,-20} | {msg.From,-20} | {msg.AccessUrl,-24} |");
                     await connection.InvokeAsync("AcknowledgeMessage", msg.Id);
                 }
             }
@@ -144,7 +153,7 @@ class SignalRConsoleTest
                 return;
             }
         });
-        
+
         connection.On<string>("ReceiveBroadcastMessage", message =>
         {
             Console.WriteLine($"📩 Broadcast message: {message}");
@@ -154,7 +163,7 @@ class SignalRConsoleTest
         {
             Console.WriteLine($"Connecting to Hub: {HubUrl}");
             await connection.StartAsync();
-            
+
             Console.WriteLine("Connection started successfully. Listening for messages...\nPress Enter to exit.");
             Console.WriteLine($"🔃 ==================================== 🔃");
         }

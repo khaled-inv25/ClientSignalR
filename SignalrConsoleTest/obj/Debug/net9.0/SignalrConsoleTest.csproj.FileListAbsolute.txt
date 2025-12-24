@@ -30,3 +30,4 @@ D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalrConsoleTes
 D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalrConsoleTest\obj\Debug\net9.0\SignalrConsoleTest.pdb
 D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalrConsoleTest\obj\Debug\net9.0\SignalrConsoleTest.genruntimeconfig.cache
 D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalrConsoleTest\obj\Debug\net9.0\ref\SignalrConsoleTest.dll
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalrConsoleTest\obj\Debug\net9.0\SignalrConsoleTest.sourcelink.json
