@@ -1,0 +1,15 @@
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\bin\Debug\net9.0\SenderConsoleTest.exe
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\bin\Debug\net9.0\SenderConsoleTest.deps.json
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\bin\Debug\net9.0\SenderConsoleTest.runtimeconfig.json
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\bin\Debug\net9.0\SenderConsoleTest.dll
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\bin\Debug\net9.0\SenderConsoleTest.pdb
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\obj\Debug\net9.0\SenderConsoleTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\obj\Debug\net9.0\SenderConsoleTest.AssemblyInfoInputs.cache
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\obj\Debug\net9.0\SenderConsoleTest.AssemblyInfo.cs
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\obj\Debug\net9.0\SenderConsoleTest.csproj.CoreCompileInputs.cache
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\obj\Debug\net9.0\SenderConsoleTest.sourcelink.json
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\obj\Debug\net9.0\SenderConsoleTest.dll
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\obj\Debug\net9.0\refint\SenderConsoleTest.dll
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\obj\Debug\net9.0\SenderConsoleTest.pdb
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\obj\Debug\net9.0\SenderConsoleTest.genruntimeconfig.cache
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SenderConsoleTest\obj\Debug\net9.0\ref\SenderConsoleTest.dll
