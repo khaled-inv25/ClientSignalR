@@ -5,6 +5,7 @@ using System.Text.Json;
 class SignalRConsoleTest
 {
     // --- Configuration ---
+    //private const string BaseUrl = "https://localhost:7012";
     private const string BaseUrl = "https://localhost:44306";
     private const string TokenEndpoint = BaseUrl + "/connect/token";
     private const string HubUrl = BaseUrl + "/online-mobile-user";

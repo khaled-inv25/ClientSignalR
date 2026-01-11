@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\projects\\ASP.NET\\Abp\\esh3arTech_versions\\SignalrConsoleTest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F56EF18E-3712-4F1F-9B57-4461F6CC0DFA}|SenderConsoleTest\\SenderConsoleTest.csproj|d:\\projects\\asp.net\\abp\\esh3artech_versions\\signalrconsoletest\\senderconsoletest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F56EF18E-3712-4F1F-9B57-4461F6CC0DFA}|SenderConsoleTest\\SenderConsoleTest.csproj|solutionrelative:senderconsoletest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E9F3FC8F-182A-4E24-B12F-773863D2163E}|SignalRClientTest\\SignalRClientTest.csproj|d:\\projects\\asp.net\\abp\\esh3artech_versions\\signalrconsoletest\\signalrclienttest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9F3FC8F-182A-4E24-B12F-773863D2163E}|SignalRClientTest\\SignalRClientTest.csproj|solutionrelative:signalrclienttest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 318,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,15 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\projects\\ASP.NET\\Abp\\esh3arTech_versions\\SignalrConsoleTest\\SignalRClientTest\\Program.cs",
               "RelativeDocumentMoniker": "SignalRClientTest\\Program.cs",
               "ToolTip": "D:\\projects\\ASP.NET\\Abp\\esh3arTech_versions\\SignalrConsoleTest\\SignalRClientTest\\Program.cs",
               "RelativeToolTip": "SignalRClientTest\\Program.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAnwCoAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-27T09:17:37.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\projects\\ASP.NET\\Abp\\esh3arTech_versions\\SignalrConsoleTest\\SenderConsoleTest\\Program.cs",
+              "RelativeDocumentMoniker": "SenderConsoleTest\\Program.cs",
+              "ToolTip": "D:\\projects\\ASP.NET\\Abp\\esh3arTech_versions\\SignalrConsoleTest\\SenderConsoleTest\\Program.cs*",
+              "RelativeToolTip": "SenderConsoleTest\\Program.cs*",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAcwJYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T10:52:07.987Z",
               "EditorCaption": ""
             }
           ]
