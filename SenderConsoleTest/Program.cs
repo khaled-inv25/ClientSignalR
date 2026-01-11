@@ -150,5 +150,6 @@ class SenderConsoleTest
 
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine($"\nExiting application. Time[{stopwatch}]");
+        Console.ResetColor();
     }
 }

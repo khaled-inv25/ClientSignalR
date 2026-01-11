@@ -42,8 +42,7 @@
               "RelativeToolTip": "SignalRClientTest\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAMgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T09:17:37.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T09:17:37.101Z"
             },
             {
               "$type": "Document",
@@ -51,9 +50,9 @@
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\projects\\ASP.NET\\Abp\\esh3arTech_versions\\SignalrConsoleTest\\SenderConsoleTest\\Program.cs",
               "RelativeDocumentMoniker": "SenderConsoleTest\\Program.cs",
-              "ToolTip": "D:\\projects\\ASP.NET\\Abp\\esh3arTech_versions\\SignalrConsoleTest\\SenderConsoleTest\\Program.cs*",
-              "RelativeToolTip": "SenderConsoleTest\\Program.cs*",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAcwJYAAAAIAAAAAAAAAA==",
+              "ToolTip": "D:\\projects\\ASP.NET\\Abp\\esh3arTech_versions\\SignalrConsoleTest\\SenderConsoleTest\\Program.cs",
+              "RelativeToolTip": "SenderConsoleTest\\Program.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAmwJoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T10:52:07.987Z",
               "EditorCaption": ""
