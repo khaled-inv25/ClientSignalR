@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
@@ -72,7 +71,7 @@ class SenderConsoleTest
     private static async Task SendMessageAsync(HttpClient client)
     {
         Console.WriteLine("\n--- New Message ---");
-        Console.Write("Recipient Phone Number: ");
+        //Console.Write("Recipient Phone Number: ");
         //string recipient = Console.ReadLine();
         string recipient = "775265496";
 
@@ -120,13 +119,20 @@ class SenderConsoleTest
 
     public static async Task Main(string[] args)
     {
-        var token = await GetTokenAsync("esh3ar_userA");
+        Console.Write("Enter username:");
+        var username = Console.ReadLine();
+        if (string.IsNullOrEmpty(username))
+        {
+            username = "esh3ar_userA";
+        }
+
+        var token = await GetTokenAsync(username);
         if (token == null)
         {
             Console.WriteLine("Failed to obtain access token. Exiting...");
             return;
         }
-        Console.WriteLine("Current user: esh3ar_userA");
+        Console.WriteLine($"Current user: {username}");
         Console.WriteLine("Access token obtained successfully.");
 
         using var client = new HttpClient();

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SenderConsoleTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+844ef0f15b757361019c21ca61a22d47ee8a2ffb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f2f55da24e3634e43d52612b66743f6e9c660c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SenderConsoleTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SenderConsoleTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

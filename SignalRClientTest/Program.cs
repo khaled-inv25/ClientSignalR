@@ -26,19 +26,10 @@ class SignalRConsoleTest
         public string TokenType { get; set; }
     }
 
-    public class MessageDto
-    {
-        public Guid Id { get; set; }
-        public string RecipientPhoneNumber { get; set; }
-        public string MessageContent { get; set; }
-        public string From { get; set; }
-        public string AccessUrl { get; set; }
-        public DateTime? UrlExpiresAt { get; set; }
-    }
-
     public class MessageModel
     {
         public Guid Id { get; set; }
+        public Guid CreatorId { get; set; }
         public string RecipientPhoneNumber { get; set; }
         public string MessageContent { get; set; }
         public string From { get; set; }
@@ -48,7 +39,8 @@ class SignalRConsoleTest
 
     private static readonly object _consoleLock = new object();
 
-    private static void DisplayMessage(string type, string from, string content, string url, Guid id)
+    private static void 
+        DisplayMessage(string type, string from, string content, string url, Guid id)
     {
         lock (_consoleLock)
         {
@@ -138,7 +130,7 @@ class SignalRConsoleTest
                 var msg = JsonSerializer.Deserialize<MessageModel>(message);
                 if (msg != null)
                 {
-                    DisplayMessage("LIVE", msg.From, msg.MessageContent, msg.AccessUrl, msg.Id);
+                    DisplayMessage("LIVE", msg.CreatorId.ToString(), msg.MessageContent, msg.AccessUrl, msg.Id);
                     await connection.InvokeAsync("AcknowledgeMessage", msg.Id);
                 }
             }
@@ -153,12 +145,12 @@ class SignalRConsoleTest
         {
             try
             {
-                var msgs = JsonSerializer.Deserialize<List<MessageDto>>(message);
+                var msgs = JsonSerializer.Deserialize<List<MessageModel>>(message);
                 if (msgs != null)
                 {
                     foreach (var msg in msgs)
                     {
-                        DisplayMessage("PENDING", msg.From, msg.MessageContent, msg.AccessUrl, msg.Id);
+                        DisplayMessage("PENDING", msg.CreatorId.ToString(), msg.MessageContent, msg.AccessUrl, msg.Id);
                         await connection.InvokeAsync("AcknowledgeMessage", msg.Id);
                     }
                 }
