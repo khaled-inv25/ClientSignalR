@@ -68,7 +68,7 @@ class SenderConsoleTest
         }
     }
 
-    private static async Task SendMessageAsync(HttpClient client)
+    private static async Task SendMessageAsync(HttpClient client, int counter)
     {
         Console.WriteLine("\n--- New Message ---");
         //Console.Write("Recipient Phone Number: ");
@@ -95,7 +95,7 @@ class SenderConsoleTest
                 var responseJson = await response.Content.ReadAsStringAsync();
                 var sendMessageResponse = JsonSerializer.Deserialize<SendMessageResponse>(responseJson);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"✔ Message sent successfully! Message ID: {sendMessageResponse.Id}");
+                Console.WriteLine($"✔{counter} Message sent successfully! Message ID: {sendMessageResponse.Id}");
                 Console.ResetColor();
 
             }
@@ -142,7 +142,7 @@ class SenderConsoleTest
         int counter = 0;
         while (counter < 1000)
         {
-            await SendMessageAsync(client);
+            await SendMessageAsync(client, counter);
 
             //Console.Write("\nSend another message? (y/n): ");
             //string choice = Console.ReadLine()?.ToLower();

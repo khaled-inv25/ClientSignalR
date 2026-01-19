@@ -39,8 +39,7 @@ class SignalRConsoleTest
 
     private static readonly object _consoleLock = new object();
 
-    private static void 
-        DisplayMessage(string type, string from, string content, string url, Guid id)
+    private static void DisplayMessage(string type, string from, string content, string url, Guid id)
     {
         lock (_consoleLock)
         {

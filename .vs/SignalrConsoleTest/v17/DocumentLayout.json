@@ -17,7 +17,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 318,
+          "DockedWidth": 355,
           "SelectedChildIndex": 4,
           "Children": [
             {
@@ -40,9 +40,10 @@
               "RelativeDocumentMoniker": "SignalRClientTest\\Program.cs",
               "ToolTip": "D:\\projects\\ASP.NET\\Abp\\esh3arTech_versions\\SignalrConsoleTest\\SignalRClientTest\\Program.cs",
               "RelativeToolTip": "SignalRClientTest\\Program.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAADwvwwAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAtwI8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T09:17:37.101Z"
+              "WhenOpened": "2025-12-27T09:17:37.101Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -52,7 +53,7 @@
               "RelativeDocumentMoniker": "SenderConsoleTest\\Program.cs",
               "ToolTip": "D:\\projects\\ASP.NET\\Abp\\esh3arTech_versions\\SignalrConsoleTest\\SenderConsoleTest\\Program.cs",
               "RelativeToolTip": "SenderConsoleTest\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAcwH0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T10:52:07.987Z",
               "EditorCaption": ""
