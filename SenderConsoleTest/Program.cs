@@ -140,16 +140,16 @@ class SenderConsoleTest
 
         var stopwatch = Stopwatch.StartNew();
         int counter = 0;
-        while (counter < 1000)
+        while (true)
         {
             await SendMessageAsync(client, counter);
 
-            //Console.Write("\nSend another message? (y/n): ");
-            //string choice = Console.ReadLine()?.ToLower();
-            //if (choice != "y")
-            //{
-            //    break;
-            //}
+            Console.Write("\nSend another message? (y/n): ");
+            string choice = Console.ReadLine()?.ToLower();
+            if (choice != "y")
+            {
+                break;
+            }
             counter++;
         }
         stopwatch.Stop();

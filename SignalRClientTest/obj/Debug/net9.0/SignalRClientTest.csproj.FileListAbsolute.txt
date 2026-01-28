@@ -31,3 +31,8 @@ D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalRClientTest
 D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalRClientTest\bin\Debug\net9.0\System.Threading.Channels.dll
 D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalRClientTest\obj\Debug\net9.0\SignalRClientTest.csproj.AssemblyReference.cache
 D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalRClientTest\obj\Debug\net9.0\SignalRC.CFB46E90.Up2Date
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalRClientTest\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalRClientTest\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalRClientTest\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalRClientTest\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\projects\ASP.NET\Abp\esh3arTech_versions\SignalrConsoleTest\SignalRClientTest\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll

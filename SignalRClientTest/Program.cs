@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.IdentityModel.Tokens.Jwt;
 
 class SignalRConsoleTest
 {
@@ -9,6 +10,7 @@ class SignalRConsoleTest
     private const string BaseUrl = "https://localhost:44306";
     private const string TokenEndpoint = BaseUrl + "/connect/token";
     private const string HubUrl = BaseUrl + "/online-mobile-user";
+    private const string BusinessHubUrl = BaseUrl + "/business-user";
 
     private const string ClientId = "Esh3arTech_App";
     private const string Password = "1q2w3E*";
@@ -35,6 +37,30 @@ class SignalRConsoleTest
         public string From { get; set; }
         public string AccessUrl { get; set; }
         public DateTime? UrlExpiresAt { get; set; }
+    }
+
+    public class SendMobileToBusinessMessage
+    {
+        public Guid Id { get; set; }
+
+        public string From { get; set; }
+
+        public string MobileAccount { get; set; }
+
+        public string Content { get; set; }
+    }
+
+    public class SendUserToMobileMessage
+    {
+        public Guid SenderId { get; set; }
+
+        public Guid MessageId { get; set; }
+
+        public string ReceipientMobileNumber { get; set; }
+
+        public string MobileAccount { get; set; }
+
+        public string Content { get; set; }
     }
 
     private static readonly object _consoleLock = new object();
@@ -73,7 +99,6 @@ class SignalRConsoleTest
             new KeyValuePair<string, string>("password", Password),
             new KeyValuePair<string, string>("scope", "Esh3arTech")
         });
-
         try
         {
             var response = await client.PostAsync(TokenEndpoint, content);
@@ -89,8 +114,23 @@ class SignalRConsoleTest
         }
     }
 
+    private static string? GetUserIdFromToken(string token)
+    {
+        var handler = new JwtSecurityTokenHandler();
+        var jwt = handler.ReadJwtToken(token);
+
+        // ABP usually uses one of these claim types
+        return jwt.Claims.FirstOrDefault(c =>
+               c.Type == "sub" ||
+               c.Type == "user_id" ||
+               c.Type == "userid" ||
+               c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
+           )?.Value;
+    }
+
     public static async Task Main(string[] args)
     {
+        int msgChatCounter = 0;
         Console.Clear();
         Console.WriteLine("=== SignalR Client ===");
         Console.Write("Username: ");
@@ -102,7 +142,8 @@ class SignalRConsoleTest
             return;
         }
 
-        var userToken = await GetTokenAsync("967" + user);
+
+        var userToken = user.StartsWith('7') ? await GetTokenAsync("967" + user) : await GetTokenAsync(user);
         if (string.IsNullOrEmpty(userToken))
         {
             Console.WriteLine("Authentication failed.");
@@ -114,7 +155,7 @@ class SignalRConsoleTest
         }
 
         var connection = new HubConnectionBuilder()
-            .WithUrl(HubUrl, options =>
+            .WithUrl(user.StartsWith('7') ? HubUrl : BusinessHubUrl, options =>
             {
                 options.AccessTokenProvider = () => Task.FromResult(userToken);
             })
@@ -165,11 +206,82 @@ class SignalRConsoleTest
             lock (_consoleLock) Console.WriteLine($"\n📢 BROADCAST: {message}");
         });
 
+        // Real-time chat
+        connection.On<string>("ReceiveChatMessage", message =>
+        {
+            try
+            {
+                if (!user.StartsWith('7'))
+                {
+                    var msg = JsonSerializer.Deserialize<SendMobileToBusinessMessage>(message);
+                    DisplayMessage($"Chat: {msgChatCounter}", msg.From, msg.Content, "Null", msg.Id);
+                }
+                else
+                {
+                    var msg = JsonSerializer.Deserialize<SendUserToMobileMessage>(message);
+                    DisplayMessage($"Chat: {msgChatCounter}", msg.SenderId.ToString(), msg.Content, "Null", new Guid());
+                }
+                msgChatCounter++;
+            }
+            catch (JsonException ex)
+            {
+                lock (_consoleLock) Console.WriteLine($"🚨 Error: {ex.Message}");
+            }
+        });
+
         try
         {
             await connection.StartAsync();
-            Console.WriteLine("\nConnected! Waiting for messages...");
-            Console.WriteLine("Press Ctrl+C to exit.\n");
+            var userId = GetUserIdFromToken(userToken);
+
+            if (!user.StartsWith('7'))
+            {
+                while (true)
+                {
+                    Console.WriteLine("\"Enter\" message to send, or\\n to Stop: ");
+                    var input = Console.ReadLine();
+                    if (input != null && input.Trim().Equals("n", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        break;
+                    }
+
+                    var message = new SendUserToMobileMessage
+                    {
+                        SenderId = Guid.Parse(userId),
+                        MessageId = Guid.NewGuid(),
+                        Content = input,
+                        MobileAccount = "775265494",
+                        ReceipientMobileNumber = "775265496"
+                    };
+
+                    await connection.InvokeAsync("SendMessage", message);
+                }
+            }
+            else
+            {
+                while (true)
+                {
+                    Console.WriteLine("\"Enter\" service code or text, or\\n to Stop: ");
+                    var input = Console.ReadLine();
+                    if (input != null && input.Trim().Equals("n", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        break;
+                    }
+                    var message = new SendMobileToBusinessMessage
+                    {
+                        Id = Guid.Parse(userId),
+                        From = user,
+                        MobileAccount = "775265494",
+                        Content = input
+                    };
+
+                    await connection.InvokeAsync("SendMessage", message);
+                }
+
+            }
+
+                //Console.WriteLine("\nConnected! Waiting for messages...");
+                Console.WriteLine("Press Ctrl+C to exit.\n");
         }
         catch (Exception ex)
         {

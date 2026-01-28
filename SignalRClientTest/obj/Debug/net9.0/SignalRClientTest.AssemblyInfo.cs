@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SignalRClientTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6083b70ecfefa09dcd1fc87134e2aad94b78bfa5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5c3439a83c772e36963d897db7f51d67143a085")]
 [assembly: System.Reflection.AssemblyProductAttribute("SignalRClientTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SignalRClientTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
